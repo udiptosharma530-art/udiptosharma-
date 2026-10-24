@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d1a">
+  <meta name="description" content="একজন শিক্ষার্থী, বিজ্ঞানপ্রেমী ও ওয়েব ডেভেলপমেন্ট শেখার আগ্রহী মানুষের ব্যক্তিগত ওয়েবসাইট।">
+  <title>My Personal Space | Personal Website</title>
+  <style>
+    :root {
+      --bg: #080d1a;
+      --panel: rgba(18, 27, 48, .78);
+      --text: #f4f7ff;
+      --muted: #aab6d0;
+      --accent: #6ee7ff;
+      --accent2: #9b8cff;
+      --line: rgba(255,255,255,.12);
+    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 15% 0%, rgba(65,95,190,.25), transparent 38%),
+        radial-gradient(ellipse at 90% 20%, rgba(120,60,190,.18), transparent 32%), var(--bg);
+      font-family: system-ui, -apple-system, "Noto Sans Bengali", "Nirmala UI", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1100px, 92%); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(16px); background: rgba(8,13,26,.8); border-bottom: 1px solid var(--line); }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
+    .logo { font-weight: 900; letter-spacing: .5px; color: var(--accent); }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 16px; font-size: .93rem; color: var(--muted); }
+    .navlinks a:hover { color: var(--accent); }
+    .hero { min-height: 82vh; display: grid; grid-template-columns: 1.4fr .8fr; gap: 36px; align-items: center; padding: 72px 0; }
+    .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 1.4px; font-size: .85rem; text-transform: uppercase; }
+    h1 { font-size: clamp(2.5rem, 7vw, 5.4rem); line-height: 1.08; margin: 12px 0 18px; letter-spacing: -2px; }
+    h1 span { background: linear-gradient(100deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { max-width: 650px; color: var(--muted); font-size: 1.1rem; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn { display: inline-block; padding: 11px 18px; border-radius: 12px; font-weight: 750; border: 1px solid var(--line); }
+    .btn.primary { color: #07111c; background: linear-gradient(100deg, var(--accent), #b3a7ff); border: 0; }
+    .btn:hover { transform: translateY(-2px); transition: .2s; }
+    .profile-card { padding: 28px; border: 1px solid var(--line); border-radius: 26px; background: linear-gradient(145deg, rgba(28,43,73,.85), rgba(15,21,38,.8)); box-shadow: 0 24px 70px rgba(0,0,0,.25); }
+    .avatar { width: 112px; height: 112px; display: grid; place-items: center; border-radius: 30px; font-size: 3rem; font-weight: 900; color: #07111c; background: linear-gradient(135deg, var(--accent), var(--accent2)); margin-bottom: 20px; }
+    .profile-card h2 { margin: 0 0 4px; font-size: 1.55rem; }
+    .muted { color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .chip { border: 1px solid var(--line); color: #dce5ff; border-radius: 999px; padding: 5px 10px; font-size: .83rem; background: rgba(255,255,255,.04); }
+    section { padding: 54px 0; }
+    .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 8px; }
+    .section-intro { color: var(--muted); margin: 0 0 25px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { padding: 22px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
+    .card .emoji { font-size: 1.8rem; }
+    .card h3 { margin: 8px 0; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+    .timeline { border-left: 2px solid rgba(110,231,255,.45); margin-left: 8px; padding-left: 22px; display: grid; gap: 18px; }
+    .timeline-item { position: relative; }
+    .timeline-item::before { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); left: -28px; top: 10px; box-shadow: 0 0 16px var(--accent); }
+    .project-link { display: inline-block; margin-top: 12px; color: var(--accent); font-weight: 700; }
+    .note { border: 1px solid rgba(110,231,255,.25); background: rgba(110,231,255,.06); border-radius: 18px; padding: 18px; color: #d8e8ff; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 34px; color: var(--muted); text-align: center; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 54px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .navlinks { gap: 10px; font-size: .83rem; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="wrap">
+    <a class="logo" href="#home">MY SPACE ✦</a>
+    <div class="navlinks">
+      <a href="#about">পরিচিতি</a>
+      <a href="#interests">আগ্রহ</a>
+      <a href="#projects">প্রজেক্ট</a>
+      <a href="#goals">লক্ষ্য</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+  <section class="hero" id="home">
+    <div>
+      <div class="eyebrow">শিখছি • তৈরি করছি • এগিয়ে যাচ্ছি</div>
+      <h1>হ্যালো, আমি<br><span>Udipto Sharma</span></h1>
+      <p class="lead">আমি একজন শিক্ষার্থী। বিজ্ঞান, গণিত, প্রযুক্তি এবং ওয়েব ডেভেলপমেন্ট নিয়ে জানতে ও নতুন কিছু তৈরি করতে ভালোবাসি। এই ওয়েবসাইটটি আমার শেখার যাত্রা, আগ্রহ এবং প্রজেক্টগুলোর ছোট্ট পরিচয়।</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">আমার প্রজেক্ট দেখো ↘</a>
+        <a class="btn" href="#about">আমার সম্পর্কে</a>
+      </div>
+    </div>
+    <aside class="profile-card">
+      <div class="avatar" aria-label="U অক্ষর">U</div>
+      <h2>Udipto Sharma</h2>
+      <div class="muted">শিক্ষার্থী · নতুন কিছু শেখার আগ্রহী</div>
+      <div class="chips">
+        <span class="chip">Science</span><span class="chip">HTML & CSS</span>
+        <span class="chip">Math</span><span class="chip">Creative Projects</span>
+        <span class="chip">Riddles</span>
+      </div>
+    </aside>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">আমার সম্পর্কে</h2>
+    <p class="section-intro">একটু পরিচয়—আমার আগ্রহ, শেখার ধরন এবং ভবিষ্যৎ পরিকল্পনা।</p>
+    <div class="grid">
+      <article class="card"><div class="emoji">🎓</div><h3>শিক্ষার্থী</h3><p>স্কুলের পড়াশোনার পাশাপাশি বিভিন্ন বিষয় সহজভাবে বুঝতে এবং পরীক্ষার জন্য পরিষ্কার নোট তৈরি করতে পছন্দ করি।</p></article>
+      <article class="card"><div class="emoji">🔬</div><h3>বিজ্ঞানপ্রেমী</h3><p>পদার্থবিজ্ঞান, রসায়ন, জীববিজ্ঞান, মহাকাশ এবং “কেন এমন হয়?”—এ ধরনের প্রশ্ন আমাকে আগ্রহী করে।</p></article>
+      <article class="card"><div class="emoji">🧩</div><h3>ধাঁধা ও সমস্যা সমাধান</h3><p>গণিতের সমস্যা, লজিক পাজল এবং ধাপে ধাপে কোনো সমস্যার সমাধান খুঁজতে ভালো লাগে।</p></article>
+    </div>
+  </section>
+
+  <section id="interests">
+    <h2 class="section-title">আমার আগ্রহ</h2>
+    <p class="section-intro">যেসব বিষয়ে আমি নিয়মিত শিখতে ও অনুশীলন করতে চাই।</p>
+    <div class="grid">
+      <article class="card"><div class="emoji">💻</div><h3>ওয়েব ডেভেলপমেন্ট</h3><p>HTML, CSS এবং JavaScript দিয়ে মোবাইলেও চলবে এমন ওয়েবসাইট ও ইন্টার‌্যাকটিভ পেজ তৈরি করা।</p></article>
+      <article class="card"><div class="emoji">🎮</div><h3>গেম ও ডিজাইন</h3><p>ছোট গেম, 3D-ধাঁচের ভিজ্যুয়াল এবং সুন্দর ওয়েব UI নিয়ে পরীক্ষা-নিরীক্ষা করা।</p></article>
+      <article class="card"><div class="emoji">📱</div><h3>মোবাইল প্রযুক্তি</h3><p>ফোনের পারফরম্যান্স, অ্যাপ, অনলাইন টুল এবং ওয়েবসাইট হোস্টিং সম্পর্কে শেখা।</p></article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">আমার প্রজেক্ট ও শেখার কাজ</h2>
+    <p class="section-intro">এগুলো আমার আগ্রহের ভিত্তিতে তৈরি বা পরিকল্পনা করা প্রজেক্টের ধরন।</p>
+    <div class="grid">
+      <article class="card"><div class="emoji">🧮</div><h3>অনলাইন ক্যালকুলেটর</h3><p>সহজ হিসাব করার ওয়েব অ্যাপ তৈরি এবং GitHub/Render-এর মতো প্ল্যাটফর্মে প্রকাশ করার অনুশীলন।</p></article>
+      <article class="card"><div class="emoji">🕹️</div><h3>Free Fire UID Checker</h3><p>অনুমোদিত API ব্যবহার করে UID থেকে পাবলিক প্লেয়ার তথ্য দেখানোর ওয়েবসাইট তৈরির শেখার প্রজেক্ট। API key গোপন রেখে সার্ভারে ব্যবহার করতে হবে।</p></article>
+      <article class="card"><div class="emoji">🌐</div><h3>নিজস্ব ওয়েবসাইট</h3><p>মোবাইল-ফ্রেন্ডলি ডিজাইন, রঙিন গ্রেডিয়েন্ট, সুন্দর লেআউট এবং সহজ নেভিগেশন দিয়ে ওয়েবপেজ তৈরি করা।</p></article>
+    </div>
+  </section>
+
+  <section id="goals">
+    <h2 class="section-title">আমার লক্ষ্য</h2>
+    <div class="timeline">
+      <div class="timeline-item"><h3>১. ভিত্তি মজবুত করা</h3><p class="muted">স্কুলের বিজ্ঞান ও গণিত ভালোভাবে শেখা এবং সমস্যা সমাধানের দক্ষতা বাড়ানো।</p></div>
+      <div class="timeline-item"><h3>২. কোডিংয়ে দক্ষ হওয়া</h3><p class="muted">HTML, CSS ও JavaScript অনুশীলন করে কাজের মতো ছোট প্রজেক্ট তৈরি করা।</p></div>
+      <div class="timeline-item"><h3>৩. প্রজেক্ট অনলাইনে প্রকাশ করা</h3><p class="muted">GitHub ও Render-এর মতো সেবা ব্যবহার করে নিরাপদে ওয়েবসাইট ডিপ্লয় করা।</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="note"><strong>একটি ছোট নোট:</strong> এই ওয়েবসাইটে ব্যক্তিগত নিরাপত্তার জন্য জন্মতারিখ, রক্তের গ্রুপ, নির্দিষ্ট বাড়ির ঠিকানা, পরিবারের সদস্যদের তথ্য বা API key রাখা হয়নি। ওয়েবসাইটটি পাবলিক করলে এমন তথ্য প্রকাশ না করাই নিরাপদ।</div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Udipto Sharma · নিজের হাতে শেখা, নিজের মতো করে তৈরি ✦</div>
+</footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
